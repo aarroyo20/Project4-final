@@ -46,6 +46,6 @@ def transactions_upload():
         db.session.commit()
         return redirect(url_for('transactions.transactions_browse'))
     try:
-        return render_template('upload.html', form=form)
+        return render_template('browse.html', form=form)
     except TemplateNotFound:
         abort(404)
