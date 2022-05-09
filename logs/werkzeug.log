@@ -1,0 +1,10 @@
+2022-05-07 05:34:37,967 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:37] "GET / HTTP/1.1" 200 -
+2022-05-07 05:34:38,069 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2022-05-07 05:34:41,218 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:41] "GET /about HTTP/1.1" 200 -
+2022-05-07 05:34:41,282 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2022-05-07 05:34:41,949 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:41] "GET /welcome HTTP/1.1" 200 -
+2022-05-07 05:34:42,025 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2022-05-07 05:34:43,796 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:43] "GET /register HTTP/1.1" 200 -
+2022-05-07 05:34:43,873 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2022-05-07 05:34:44,506 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:44] "GET /login HTTP/1.1" 200 -
+2022-05-07 05:34:44,579 [INFO] werkzeug: 172.28.0.1 - - [07/May/2022 05:34:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
