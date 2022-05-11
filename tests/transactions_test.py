@@ -23,24 +23,22 @@ def test_user(application):
         assert db.session.query(Transaction).count() == 0 # pylint: disable=no-member
 
 
-
 def test_transactions_db(application, test_user):
     """Tests transactions in database """
     user = test_user
     assert db.session.query(Transaction).count() == 0
-
     transactions = []
-    transactions.append( Transaction(100, 'Deposit') )
-    transactions.append( Transaction(20, 'Withdrawl') )
+    transactions.append( Transaction(50, 'Deposit') )
+    transactions.append( Transaction(400, 'Withdrawal') )
     user.transactions += transactions
     db.session.commit() # pylint: disable=no-member
     assert db.session.query(Transaction).count() == 2
 
     transactions1 = Transaction.query.filter_by(type='Deposit').first()
-    assert transactions1.amount == 100
-    transactions1.amount = 200
+    assert transactions1.amount == 50
+    transactions1.amount = 400
     db.session.commit() # pylint: disable=no-member
-    trans2 = Transaction.query.filter_by(amount=200).first()
+    trans2 = Transaction.query.filter_by(amount=400).first()
     assert trans2.type == 'Deposit'
 
     db.session.delete(trans2)
@@ -53,3 +51,4 @@ def test_transactions_upload_route(application, test_user):
     with application.test_client(test_user) as client:
         resp = client.get("/transactions/upload", follow_redirects=True)
         assert resp.status_code == 200
+
