@@ -43,7 +43,6 @@ def test_transactions_db(application, test_user):
 
 
 def test_transactions_upload_route(application, test_user):
-    # pylint: disable=unused-argument,redefined-outer-name
     with application.test_client(test_user) as client:
         resp = client.get("/transactions/upload", follow_redirects=True)
         assert resp.status_code == 200
