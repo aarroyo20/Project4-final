@@ -60,10 +60,19 @@ def login():
 @auth.route('/dashboard')
 @login_required
 def dashboard():
-    try:
-        return render_template('dashboard.html')
-    except TemplateNotFound:
-         return render_template('403.html')
+
+        balance = 0.0
+        # balance = db.session.query(db.func.sum(Transaction.amount)).join(transaction_user).filter(Transaction.id == transaction_user.c.transaction_id).filter_by(user_id=current_user.id).first()
+
+        for transaction in current_user.transactions:
+            # curr_transaction = Transaction.query.filter_by(id=transaction.id).first()
+            balance += float(transaction.amount)
+        balance = str(balance)
+        data = current_user.transactions
+        try:
+            return render_template('dashboard.html', balance=balance, data=data)
+        except TemplateNotFound:
+             return render_template('403.html')
 
 
 @auth.route("/logout")
