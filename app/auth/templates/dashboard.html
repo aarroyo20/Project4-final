@@ -13,7 +13,7 @@
 
     <a href="{{ url_for("transactions.transactions_upload") }}" class="btn col-2 mb-5 btn-info" role="button">Upload Transaction File</a>
 
-    <p>Account Balance: {{ balance }} </p>
+    <p>Your balance is: ${{ balance }} </p>
 
     {{ render_table(data) }}
 
